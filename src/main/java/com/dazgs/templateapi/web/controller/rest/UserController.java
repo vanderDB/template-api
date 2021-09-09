@@ -12,6 +12,6 @@ public class UserController {
 
     @GetMapping("/test")
     public ResponseEntity<String> getTestUserName() {
-        return new ResponseEntity<>("Vlad", HttpStatus.OK);
+        return new ResponseEntity<>("TestName", HttpStatus.OK);
     }
 }
