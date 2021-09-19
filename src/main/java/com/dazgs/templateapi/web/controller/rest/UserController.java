@@ -4,6 +4,8 @@ import com.dazgs.templateapi.core.domains.sql.User;
 import com.dazgs.templateapi.core.service.UserService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,8 +28,10 @@ public class UserController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<Page<User>> findAll(Pageable pageable) {
+    public ResponseEntity<Page<User>> findAll(@PageableDefault(sort = "createdOn", direction = Sort.Direction.DESC) Pageable pageable) {
 
-        return new ResponseEntity<>(userService.findAll(pageable), HttpStatus.OK);
+        var res = userService.findAll(pageable);
+
+        return new ResponseEntity<>(res, HttpStatus.OK);
     }
 }
