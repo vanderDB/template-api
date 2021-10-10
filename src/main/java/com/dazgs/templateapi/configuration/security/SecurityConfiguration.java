@@ -15,7 +15,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected UserDetailsService userDetailsService() {
         UserDetails admin = User.withDefaultPasswordEncoder()
-                .username("myadmin").password("myadminpassword").roles("AADMIN").build();
+                .username("myadmin").password("myadminpassword").roles("ADMIN").build();
 
         UserDetails user = User.withDefaultPasswordEncoder()
                 .username("myuser").password("myuserpassword").roles("USER").build();
