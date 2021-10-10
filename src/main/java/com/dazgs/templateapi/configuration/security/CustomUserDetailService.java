@@ -17,8 +17,8 @@ import java.util.List;
 public class CustomUserDetailService implements UserDetailsService {
 
     private final List<Account> accountRepository = List.of(
-            new Account("adminuser", "adminpass", "ADMIN"),
-            new Account("simpluser", "simpleuserpass", "USER")
+            new Account("adminuser", "{noop}adminpass", "ROLE_ADMIN"),
+            new Account("simpluser", "{noop}simpleuserpass", "ROLE_USER")
     );
 
     @Override
