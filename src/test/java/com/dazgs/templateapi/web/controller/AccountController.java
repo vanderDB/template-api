@@ -8,7 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-public class UserController extends AbstractWebIntegrationTest {
+public class AccountController extends AbstractWebIntegrationTest {
 
     @Test
     void findAll() throws Exception {
